@@ -1,16 +1,18 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package main;
+
+import com.formdev.flatlaf.FlatDarkLaf;
 
 /**
  *
- * @author Anupama
+ * @author naveenb2004
  */
 public class SelfTunnel {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        FlatDarkLaf.setup();
+        new front.main().setVisible(true);
     }
 }

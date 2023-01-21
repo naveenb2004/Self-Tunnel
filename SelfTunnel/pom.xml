@@ -5,12 +5,14 @@
     <artifactId>SelfTunnel</artifactId>
     <version>0.1</version>
     <packaging>jar</packaging>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <exec.mainClass>main.SelfTunnel</exec.mainClass>
     </properties>
+    
     <dependencies>
         <dependency>
             <groupId>com.formdev</groupId>
@@ -23,6 +25,7 @@
             <version>6.4.0</version>
         </dependency>
     </dependencies>
+    
     <build>
         <plugins>
             <plugin>
@@ -49,4 +52,5 @@
             </plugin>
         </plugins>
     </build>
+    
 </project>
