@@ -7,6 +7,7 @@ package back;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import javax.swing.text.DefaultCaret;
 
 /**
  *
@@ -27,6 +28,8 @@ public class main {
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(p.getInputStream()));
                     while ((line = bufferedReader.readLine()) != null) {
                         front.main.jTextArea1.append(line + "\n");
+                        DefaultCaret caret = (DefaultCaret) front.main.jTextArea1.getCaret();
+                        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
                     }
                 } catch (IOException e) {
                     System.out.println(e);

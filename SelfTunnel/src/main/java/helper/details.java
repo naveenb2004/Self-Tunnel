@@ -13,5 +13,13 @@ public class details {
     public static String version() {
         return "0.1";
     }
+    
+    public static String telegramAPI(){
+        return "";
+    }
+    
+    public static String telegramUsername(){
+        return "";
+    }
 
 }
