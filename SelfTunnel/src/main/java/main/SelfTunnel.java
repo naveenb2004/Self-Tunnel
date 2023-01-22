@@ -4,6 +4,7 @@
 package main;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import java.io.File;
 
 /**
  *
@@ -12,6 +13,10 @@ import com.formdev.flatlaf.FlatDarkLaf;
 public class SelfTunnel {
 
     public static void main(String[] args) {
+        File directory = new File(helper.details.workPath);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
         FlatDarkLaf.setup();
         new front.main().setVisible(true);
     }
