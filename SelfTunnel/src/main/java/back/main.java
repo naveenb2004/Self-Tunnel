@@ -35,6 +35,14 @@ public class main {
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(p.getInputStream()));
                     while ((line = bufferedReader.readLine()) != null) {
                         front.main.jTextArea1.append(line + "\n");
+                        try {
+                            String[] link = line.split(" tunneled with tls termination, ");
+                            if (link.length == 2) {
+                                front.main.jLabel5.setText(link[1]);
+                            }
+                        } catch (Exception e) {
+                            System.out.println(e);
+                        }
                     }
                 } catch (IOException e) {
                     System.out.println(e);
