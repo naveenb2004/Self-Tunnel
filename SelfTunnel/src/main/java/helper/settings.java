@@ -41,7 +41,7 @@ public class settings {
     }
 
     public static String restartAfterFallback() {
-        String status = "0";
+        String status = "1";
         File f1 = new File(workPath + "settingsBasic.nb");
         if (f1.exists()) {
             try (Stream<String> lines = Files.lines(Paths.get(
@@ -73,16 +73,14 @@ public class settings {
         try {
             ProcessBuilder processBuilder
                     = new ProcessBuilder("cmd.exe", "/c",
-                            "pwsh -Command \"Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'\"");
+                            "powershell -Command \"Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'\">aaa.txt");
             processBuilder.redirectErrorStream(true);
             Process p = processBuilder.start();
             String line = null;
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(p.getInputStream()));
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
-                String[] x = line.split("State : ");
-                if (x[0].equals("←[32;1mState")) {
-                    System.out.println(x[1]);
+                String[] x = line.split(" : ");
+                if (x[0].equals("State")) {
                     status.add(x[1]);
                 }
             }

@@ -19,12 +19,19 @@ public class settings extends javax.swing.JFrame {
     }
 
     private void startup() {
-        try {
-            jLabel8.setText(helper.settings.sshStatus().get(0));
-            jLabel9.setText(helper.settings.sshStatus().get(1));
-        } catch (Exception e) {
-            System.out.println(e);
+        new Thread(
+                new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    jLabel8.setText(helper.settings.sshStatus().get(0));
+                    jLabel9.setText(helper.settings.sshStatus().get(1));
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }
         }
+        ).start();
     }
 
     /**
@@ -175,9 +182,9 @@ public class settings extends javax.swing.JFrame {
 
         jLabel7.setText("Server : ");
 
-        jLabel8.setText("---");
+        jLabel8.setText("Waiting...");
 
-        jLabel9.setText("---");
+        jLabel9.setText("Waiting...");
 
         jButton3.setText("Install");
 

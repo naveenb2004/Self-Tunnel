@@ -335,12 +335,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
-                <Property name="text" type="java.lang.String" value="---"/>
+                <Property name="text" type="java.lang.String" value="Waiting..."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel9">
               <Properties>
-                <Property name="text" type="java.lang.String" value="---"/>
+                <Property name="text" type="java.lang.String" value="Waiting..."/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">
