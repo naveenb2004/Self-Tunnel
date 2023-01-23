@@ -13,7 +13,7 @@ import java.io.File;
 public class SelfTunnel {
 
     public static void main(String[] args) {
-        File directory = new File(helper.details.workPath);
+        File directory = new File(helper.settings.workPath);
         if (!directory.exists()) {
             directory.mkdirs();
         }

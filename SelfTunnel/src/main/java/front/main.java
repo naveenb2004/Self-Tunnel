@@ -30,8 +30,8 @@ public class main extends javax.swing.JFrame {
     }
 
     private void startup() {
-        jLabel1.setText("Self Tunnel (v" + helper.details.version() + ")");
-        if (helper.details.status().equals("0")) {
+        jLabel1.setText("Self Tunnel (v" + helper.settings.version() + ")");
+        if (helper.settings.status().equals("0")) {
             jButton2.setText("Start!");
         } else {
             jButton2.setText("Stop!");
@@ -106,7 +106,7 @@ public class main extends javax.swing.JFrame {
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel2.setText("Pastebin Status : ");
+        jLabel2.setText("Telegram Status : ");
 
         jLabel3.setText("Tunnel URL : ");
 
@@ -256,8 +256,9 @@ public class main extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if (helper.details.status().equals("0")) {
-            try (PrintStream out = new PrintStream(new File("C:\\ProgramData\\naveenb2004\\self-tunnel\\status.nb"))) {
+        if (helper.settings.status().equals("0")) {
+            try (PrintStream out = new PrintStream(new File(
+                    "C:\\ProgramData\\naveenb2004\\self-tunnel\\status.nb"))) {
                 out.println("1");
             } catch (FileNotFoundException ex) {
                 System.out.println(ex);
@@ -265,7 +266,8 @@ public class main extends javax.swing.JFrame {
             new back.main().startTunnel();
             jButton2.setText("Stop!");
         } else {
-            try (PrintStream out = new PrintStream(new File("C:\\ProgramData\\naveenb2004\\self-tunnel\\status.nb"))) {
+            try (PrintStream out = new PrintStream(new File(
+                    "C:\\ProgramData\\naveenb2004\\self-tunnel\\status.nb"))) {
                 out.println("0");
             } catch (FileNotFoundException ex) {
                 System.out.println(ex);
@@ -314,7 +316,7 @@ public class main extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For settings see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
